@@ -14,7 +14,9 @@ const Navbar = () => {
     <header className="fixed top-0 left-0 w-full z-50 text-gray-600 bg-white body-font shadow-md">
       <div className="container mx-auto flex flex-wrap h-18 p-5 flex-row items-center justify-between">
         <Link to="/" className="flex title-font font-medium items-center">
-          <h1 className="font-extrabold text-3xl text-blue-700 tracking-wider">Leadify</h1>
+          <h1 className="font-extrabold text-3xl text-blue-700 tracking-wider">
+            Leadify
+          </h1>
         </Link>
 
         {/* Desktop Menu */}
@@ -86,11 +88,9 @@ const Navbar = () => {
       >
         <div className="flex justify-between items-center p-5 border-b">
           <Link to={"/"}>
-            <img
-              src="https://html.xpressbuddy.com/e.visa/assets/img/logo/logo-black.svg"
-              alt="Logo"
-              className="h-8"
-            />
+            <h1 className="font-extrabold text-lg text-blue-700 tracking-wider">
+              Leadify
+            </h1>
           </Link>
           <button onClick={() => setMenuOpen(false)}>
             <FiX className="w-6 h-6 text-gray-700" />
@@ -102,37 +102,25 @@ const Navbar = () => {
           {[
             {
               title: "Home",
-              items: ["Dashboard", "Settings", "Profile", "Logout"],
             },
             {
-              title: "Pages",
-              items: [
-                <Link to="/" onClick={() => setMenuOpen(false)}>
-                  Student Visa
-                </Link>,
-                <Link to="/workvisa" onClick={() => setMenuOpen(false)}>
-                  Work Visa
-                </Link>,
-                "Services",
-                "Pricing",
-                "FAQs",
-              ],
+              title: "About",
             },
             {
-              title: "Country",
-              items: ["USA", "Canada", "Australia", "UK"],
+              title: "Portfolio",
+            },
+            {
+              title: "Services",
+            },
+            {
+              title: "Contact",
             },
           ].map((section, index) => (
             <div key={index} className="mb-4 border-b pb-2">
               <button
                 onClick={() => toggleAccordion(section.title)}
                 className="w-full flex justify-between items-center font-semibold text-left text-black py-2"
-              >
-                <span>{section.title}</span>
-                <span className="text-xl">
-                  {activeAccordion === section.title ? "−" : "+"}
-                </span>
-              </button>
+              ></button>
 
               <div
                 className={`overflow-hidden transition-all duration-300 ease-in-out ${
@@ -140,25 +128,9 @@ const Navbar = () => {
                     ? "max-h-60 opacity-100"
                     : "max-h-0 opacity-0"
                 }`}
-              >
-                <ul className="pl-4 mt-2 space-y-2 text-sm text-gray-700">
-                  {section.items.map((item, idx) => (
-                    <li key={idx} className="hover:text-red-600 cursor-pointer">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              ></div>
             </div>
           ))}
-
-          <Link
-            to="/about"
-            className="block mt-4 text-black font-semibold hover:text-red-600"
-            onClick={() => setMenuOpen(false)}
-          >
-            About Us
-          </Link>
         </div>
       </div>
     </header>
