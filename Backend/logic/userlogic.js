@@ -1,7 +1,5 @@
 //Database Logic Here
-//import User from model/usermodel.js
-
-`const getallusers=async ()=>{
-    return await User.find()
-    }`
-//export {getallUsers}
+const getallusers=async ()=>{
+    return await Client.find()
+    }
+export {getallusers}
